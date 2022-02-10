@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Exercise16 {
@@ -21,6 +22,30 @@ public class Exercise16 {
            if oneIndex >= one.length, there are no `one` elements remaining so use elements from two
            if twoIndex >= two.length, there are no `two` elements remaining so use elements from one
           */
+
+        int[] target = new int[one.length + two.length];
+        int[][] lrg1st = new int[2][];
+        lrg1st[0] = one.length >= two.length ? one : two;
+        lrg1st[1] = one.length < two.length ? one : two;
+
+        for (int lrgIndex = 0, smlIndex = 0, targetIndex = 0; smlIndex <= lrg1st[1].length; targetIndex++) {
+            if (smlIndex == lrg1st[1].length) {
+                finish(target, targetIndex, lrg1st[0], lrgIndex);
+                break;
+            } else if (lrgIndex == lrg1st[0].length) {
+                finish(target, targetIndex, lrg1st[1], smlIndex);
+                break;
+            } else if (lrg1st[0][lrgIndex] <= lrg1st[1][smlIndex]){
+                target[targetIndex] = lrg1st[0][lrgIndex];
+                lrgIndex++;
+            } else {
+                target[targetIndex] = lrg1st[1][smlIndex];
+                smlIndex++;
+            }
+        }
+        System.out.printf("array one: %s", Arrays.toString(one));
+        System.out.printf("array two: %s", Arrays.toString(two));
+        System.out.printf("array target: %s", Arrays.toString(target));
     }
 
     public static int[] makeRandomAscendingArray() {
@@ -32,5 +57,11 @@ public class Exercise16 {
             current += random.nextInt(4);
         }
         return result;
+    }
+
+    public static void finish(int[] target, int startTarget, int[] source, int startSource) {
+        for (; startSource < source.length; startSource++, startTarget++) {
+            target[startTarget] = source[startSource];
+        }
     }
 }
