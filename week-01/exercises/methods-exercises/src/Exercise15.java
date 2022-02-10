@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Exercise15 {
     /* FIZZ BUZZ
 
@@ -32,4 +33,55 @@ public class Exercise15 {
     17
     Fizz
      */
+    public static void main(String[] args) {
+        int end = getInt(1);
+        for(int i = 1; i <= end; i++) {
+            System.out.println("" + (i%3==0 ? (i%5==0 ? "Fizz Buzz" : "Fizz") : (i%5==0 ? "Buzz" : i)));
+        }
+    }
+
+
+    public static int getInt() {
+        Scanner console = new Scanner(System.in);
+        int input = 0;
+        boolean isInt = false;
+        do {
+            try {
+                System.out.println("Enter an Integer:");
+                input = Integer.parseInt(console.nextLine());
+                isInt = true;
+            } catch (NumberFormatException e) {
+                System.out.println("That's not an Integer");
+                isInt = false;
+            }
+        } while (!isInt);
+        return input;
+    }
+
+    public static int getInt(int min) {
+        Scanner console = new Scanner(System.in);
+        int input = 0;
+        boolean isInt = false;
+        do {
+            try {
+                System.out.printf("Enter an Integer greater than %s:%n", min);
+                input = Integer.parseInt(console.nextLine());
+                isInt = input > min;
+            } catch (NumberFormatException e) {
+                System.out.println("That's not an Integer");
+                isInt = false;
+            }
+        } while (!isInt);
+        return input;
+    }
+
+
+
+
+
 }
+
+
+
+
+
