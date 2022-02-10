@@ -38,6 +38,8 @@ public class Exercise15 {
         for(int i = 1; i <= end; i++) {
             System.out.println("" + (i%3==0 ? (i%5==0 ? "Fizz Buzz" : "Fizz") : (i%5==0 ? "Buzz" : i)));
         }
+        // If I wanted to change the numbers, I would store them as a variable and accept them as arguments in a separate method
+        // If I wanted to point out additional divisors, I would attempt recursion
     }
 
 
