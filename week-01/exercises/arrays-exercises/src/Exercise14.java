@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Random;
 
 public class Exercise14 {
@@ -53,6 +54,7 @@ public class Exercise14 {
         }
 
         for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].toLowerCase(Locale.ROOT);
             System.out.println(arr[i]);
         }
     }
