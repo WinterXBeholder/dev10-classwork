@@ -9,5 +9,3 @@ C
 src/Exercise12.java,c\6\c64115f24e26b9c80e2fe1c67aaa6c845e5f67ea
 C
 src/Exercise13.java,e\e\eec32ec7c6fed29c350f09f138fe04195de97c39
-C
-src/Exercise14.java,a\b\ab4ab64bed0c412daca3691ba277b4b7df84eadd
