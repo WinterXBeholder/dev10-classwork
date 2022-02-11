@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Exercise13 {
@@ -11,6 +12,22 @@ public class Exercise13 {
         // 2. Create a String[] to hold the towns.
         // 3. Loop through statesOrTowns a second time and put all towns in the new array.
         // 4. Print the town array.
+        int count = 0;
+        for (int i = 0; i < statesOrTowns.length; i++) {
+            if (statesOrTowns[i].length() != 2) {
+                count++;
+            }
+        }
+        String[] towns = new String[count];
+        for (int i = 0, t = 0; i < statesOrTowns.length; i++) {
+            if (statesOrTowns[i].length() != 2) {
+                towns[t] = statesOrTowns[i];
+                t++;
+            }
+        }
+
+        System.out.printf("statesOrTowns array: %s%n", Arrays.toString(statesOrTowns));
+        System.out.printf("towns two: %s%n", Arrays.toString(towns));
     }
 
     public static String[] makeRandomStateAndTownArray() {
