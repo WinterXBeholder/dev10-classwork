@@ -43,9 +43,9 @@ public class Exercise16 {
                 smlIndex++;
             }
         }
-        System.out.printf("array one: %s", Arrays.toString(one));
-        System.out.printf("array two: %s", Arrays.toString(two));
-        System.out.printf("array target: %s", Arrays.toString(target));
+        System.out.printf("array one: %s%n", Arrays.toString(one));
+        System.out.printf("array two: %s%n", Arrays.toString(two));
+        System.out.printf("array target: %s%n", Arrays.toString(target));
     }
 
     public static int[] makeRandomAscendingArray() {
