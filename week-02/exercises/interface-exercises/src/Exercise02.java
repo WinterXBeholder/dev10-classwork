@@ -22,6 +22,8 @@ public class Exercise02 {
         // Red Wallet: 103.25
         // Mortgage #1234-dfdf-8790-trtr: -319900.0
         // [Some description]: [balance]
+
+        printAll(storages);
     }
 
 
@@ -31,4 +33,13 @@ public class Exercise02 {
         }
     }
 
+    /**
+     * prints the details for each MoneyStorage in the array.
+     * @param accts
+     */
+    static void printAll(MoneyStorage[] accts) {
+        for (int i = 0; i < accts.length; i++) {
+            System.out.printf("%s $%.2f%n", accts[i].getDescription(), accts[i].getBalance());
+        }
+    }
 }
