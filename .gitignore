@@ -27,10 +27,12 @@ hs_err_pid*
 # Namely, the JDK version so students don't have to manually set the SDK. 
 # We don't want source control configuration.
 **/.idea/vcs.xml
+**/.idea/sonarLint
 out/
 
 # Maven
 target/
+**/target/
 
 # macOS
 .DS_Store

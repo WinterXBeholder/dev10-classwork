@@ -39,7 +39,9 @@ public class Queen {
      * @return true if the move is valid, false if it's not
      */
     public boolean move(int row, int column) {
-
+        if ( row < 0 || row > 7 || column < 0 || column > 7) {
+            return false;
+        }
         // 1. Implement the move method.
         // If the move is valid, return true and update `row` and `column` fields.
         // If the move is invalid, return false and do not update fields.
@@ -51,6 +53,15 @@ public class Queen {
         // - Otherwise, the absolute difference between row parameter and field
         //   and the absolute difference between the column parameter and field must be the same.
         //   That represents a diagonal move.
-        return false;
+        String horEqual = row == getRow() ? "horEqual" : "";
+        String verEqual = column == getColumn() ? "verEqual" : "";
+
+        switch (horEqual+verEqual) {
+            case "horEqualverEqual":
+                return false;
+        }
+
+
+        return true;
     }
 }
